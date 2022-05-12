@@ -1,0 +1,108 @@
+// ========== Testimonial Section
+
+.testimonial {
+    max-width: 100%;
+    min-height: rem(582);
+
+    &__heading {
+        text-align: center;
+        padding: rem(40) rem(0) rem(60) rem(0);
+        @include media-query (tablet) {
+            padding-top: rem(150);
+        }
+    }
+
+    &__bio {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: rem(72);
+            height: rem(72);
+            border-radius: 100%;
+            transform: translateY(rem(-36));
+            position: absolute;
+        }
+        p {
+            font-weight: $weight-bold;
+            transform: translateY(rem(36));
+            padding: rem(15) rem(0) rem(20) rem(0);
+        }
+    }
+
+    &__content {
+        text-align: center;
+        transform: translateY(rem(36));
+        
+        p {
+            font-size: rem(16);
+            line-height: rem(26);
+            padding: rem(0) rem(10);
+        }
+    }
+
+    &__button {
+        text-align: center;
+        padding: rem(20) rem(0) rem(50) rem(0);
+
+        @include media-query (tablet) {
+            padding-bottom: rem(178);
+        }
+    }
+
+}
+
+.swiper-container {
+    min-height: 300px;
+    max-width: 600px;
+}
+.swiper-wrapper {
+    min-height: 0px;
+}
+.swiper-slide {
+    min-height: rem(284);
+    max-width: 100%;
+    margin: $center-section;
+    display: flex;
+    align-items: center;
+}
+
+.slider__inner {
+    background-color: #97979718;
+    background-color: $color-neutral;
+    height: rem(248);
+    max-width: rem(340);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: none !important;
+
+    @include media-query(tablet) {
+        display: block !important;
+        color: $color-accent !important;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background: $color-accent !important;
+}
+
+.bio img {
+    position: absolute;
+    transform: translateX(rem(20)), translateY(rem(-40));
+}
+
+//* ==============================================================================
+
+.section__bg {
+    @include media-query(tablet) {
+        max-width: 100%;
+        background-image: url(/images/bg-tablet-pattern-3.svg);
+        background-repeat: no-repeat;
+        background-repeat: no-repeat;
+        background-size: rem(700) auto;
+        background-position: rem(-300) rem(300);
+    }
+}
+
+//* ==============================================================================
