@@ -20,3 +20,4 @@
 
 ## for more challenges go to https://www.frontendmentor.io/home
 ## And soon there will be more challenges completed in Brazilian Portuguese 💪
+## ⚠️ Note: the words "home" and "Go", were not translated because they were strange.
