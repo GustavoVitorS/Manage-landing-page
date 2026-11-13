@@ -1,0 +1,101 @@
+/*
+ * Manage / Frontend Mentor — minimal testimonial alignment patch.
+ * Intentionally DOES NOT add backgrounds, card borders, typography changes,
+ * new colors, or changes to any other section of the page.
+ */
+
+/* The original 600px max-width confined the entire horizontal carousel.
+   Keep each testimonial approximately 600px wide, but let the track span the page. */
+.testimonial .swiper-container {
+  width: 100%;
+  max-width: none;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial .swiper-slide {
+  flex-shrink: 0;
+  width: min(600px, calc(100vw - 24px));
+  max-width: none;
+  justify-content: center;
+}
+
+/* The markup calls this .slide__inner; the old .slider__inner is a typo.
+   Supply only dimensions, not the background and card styles from that rule. */
+.testimonial .slide__inner {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 12px;
+  background: transparent;
+}
+
+/* Avoid cutting avatars at the top of the slide while keeping the
+   same 72px image, original font, text sizes, and layout flow. */
+.testimonial .testimonial__bio img {
+  position: static;
+  transform: none;
+  margin: 0 auto;
+}
+
+.testimonial .testimonial__bio p,
+.testimonial .testimonial__content {
+  transform: none;
+}
+
+/* Preserve the original orange navigation and bullet styling. */
+
+/* MANAGE-CAROUSEL-NAVIGATION-START */
+/* Keep the current slides, typography and mobile behavior unchanged.
+   Only restore the original orange left/right navigation on desktop. */
+@media screen and (min-width: 992px) {
+  .testimonial .swiper-container > .swiper-button-prev,
+  .testimonial .swiper-container > .swiper-button-next {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top: 50% !important;
+    width: 44px !important;
+    height: 52px !important;
+    margin-top: -26px !important;
+    z-index: 30 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #f25f3a !important;
+    background: transparent !important;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .testimonial .swiper-container > .swiper-button-prev {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .testimonial .swiper-container > .swiper-button-next {
+    right: 0 !important;
+    left: auto !important;
+  }
+
+  /* CSS-only chevrons: independent of Swiper's icon font. */
+  .testimonial .swiper-container > .swiper-button-prev::after,
+  .testimonial .swiper-container > .swiper-button-next::after {
+    content: "" !important;
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-top: 3px solid currentColor !important;
+    border-right: 3px solid currentColor !important;
+    font-size: 0 !important;
+  }
+
+  .testimonial .swiper-container > .swiper-button-prev::after {
+    transform: rotate(-135deg) !important;
+  }
+
+  .testimonial .swiper-container > .swiper-button-next::after {
+    transform: rotate(45deg) !important;
+  }
+}
+/* MANAGE-CAROUSEL-NAVIGATION-END */

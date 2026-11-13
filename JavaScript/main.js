@@ -148,6 +148,9 @@ footButton.addEventListener('click', e => {
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    initialSlide: 2,
     loop: true,
   
     // If we need pagination
